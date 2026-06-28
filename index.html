@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,60 +14,67 @@
         body {
             background-color: #000000;
             color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px;
+            padding: 15px;
+            overflow-x: hidden;
         }
 
-        .outer-frame {
+        /* Готическая рамка с двойным контуром и неоном */
+        .gothic-frame {
             border: 2px solid #ffffff;
-            padding: 30px 15px;
-            max-width: 850px;
+            outline: 6px double #ffffff;
+            outline-offset: -12px;
+            padding: 45px 20px;
+            max-width: 750px;
             width: 100%;
             text-align: center;
-            background-color: #000000;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+            background-color: #020202;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
         }
 
+        /* Светящийся заголовок */
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
         }
 
         .content-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 15px;
+            margin-bottom: 30px;
             width: 100%;
         }
 
-        /* Настройки для правильного отображения полного арта */
-        .scythe-art {
-            font-family: monospace;
-            font-size: 7px; /* Немного уменьшили, чтобы длинная коса влезла полностью */
-            line-height: 1.1;
-            color: #ffffff;
-            font-weight: bold;
-            white-space: pre;
-            user-select: none;
+        /* Иконки Смерти — теперь с запасом места, чтобы лезвие не резалось */
+        .death-scythe {
+            width: 120px;
+            height: 140px;
+            fill: #ffffff;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
         }
 
-        /* Левая коса обычная, правую зеркалим */
+        /* Правую просто зеркалим, там всё тоже будет чётко */
         .scythe-right {
             transform: scaleX(-1);
         }
 
+        /* Светящаяся таблица */
         .table-wrapper {
-            flex-shrink: 0;
-            width: 240px;
+            flex-grow: 1;
+            max-width: 260px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
         table {
@@ -78,8 +84,8 @@
         }
 
         td {
-            padding: 12px;
-            border: 1px solid #ffffff;
+            padding: 14px 10px;
+            border: 2px solid #ffffff;
             font-size: 14px;
             text-align: left;
         }
@@ -95,65 +101,65 @@
 
         td.value {
             color: #ffffff;
-            font-family: monospace;
             font-size: 15px;
             font-weight: bold;
+            text-shadow: 0 0 8px #ffffff;
         }
 
+        /* Светящийся нижний текст */
         .footer-text {
             font-size: 13px;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 15px;
+            letter-spacing: 3px;
+            margin-top: 20px;
             font-weight: bold;
+            text-shadow: 0 0 8px #ffffff, 0 0 15px #ffffff;
         }
 
-        /* Адаптив для мобильных экранов */
-        @media (max-width: 650px) {
-            .scythe-art {
-                font-size: 5px;
+        /* Настройки под мобилки */
+        @media (max-width: 550px) {
+            .gothic-frame {
+                outline: 4px double #ffffff;
+                outline-offset: -10px;
+                padding: 35px 5px;
+            }
+            .death-scythe {
+                width: 80px;
+                height: 110px;
+            }
+            h1 {
+                font-size: 20px;
             }
             .table-wrapper {
-                width: 180px;
+                max-width: 190px;
             }
             td {
-                padding: 8px;
+                padding: 10px 6px;
+                font-size: 11px;
+            }
+            td.value {
                 font-size: 12px;
+            }
+            .footer-text {
+                font-size: 10px;
+                letter-spacing: 1.5px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="outer-frame">
+    <div class="gothic-frame">
         <h1>STEAM ACCOUNT</h1>
         
         <div class="content-container">
-            <pre class="scythe-art">
-⠀⣿⠲⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣸⡏⠀⠀⠀⠉⠳⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣿⠀⠀⠀⠀⠀⠀⠀⠉⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⣄⠀⠀⠀⡰⠋⢙⣿⣦⡀⠀⠀⠀⠀⠀
-⠸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣙⣦⣮⣤⡀⣸⣿⣿⣿⣆⠀⠀⠀⠀
-⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠀⣿⢟⣫⠟⠋⠀⠀⠀⠀
-⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣷⣷⣿⡁⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢸⣿⣿⣧⣿⣿⣆⠙⢆⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣤⣿⣿⣿⡟⠹⣿⣿⣿⣿⣷⡀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣧⣴⣿⣿⣿⣿⠏⢧⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠈⢳⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡏⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⢳
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⢠⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⢸⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⢸⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠛⠻⠿⣿⣿⣿⡿⠿⠿⠿⠿⠿⢿⣿⣿⠏⠀⠀⠀</pre>
+            <svg class="death-scythe" viewBox="-15 0 130 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,25 C40,25 35,35 35,45 C35,60 25,85 25,90 L45,90 C45,80 50,70 55,65 C58,60 55,45 53,40 C52,38 52,25 50,25 Z"/>
+                <path d="M38,20 C50,12 75,10 98,18 C75,22 55,30 42,32 C38,28 36,24 38,20 Z"/>
+                <path d="M41,22 L28,95 L31,95 L44,22 Z"/>
+                <path d="M43,42 Q40,45 37,43 T42,48" stroke="#ffffff" stroke-width="2" fill="none"/>
+            </svg>
             
             <div class="table-wrapper">
                 <table>
@@ -168,30 +174,12 @@
                 </table>
             </div>
             
-            <pre class="scythe-art scythe-right">
-⠀⣿⠲⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣸⡏⠀⠀⠀⠉⠳⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⣿⠀⠀⠀⠀⠀⠀⠀⠉⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⣄⠀⠀⠀⡰⠋⢙⣿⣦⡀⠀⠀⠀⠀⠀
-⠸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣙⣦⣮⣤⡀⣸⣿⣿⣿⣆⠀⠀⠀⠀
-⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠀⣿⢟⣫⠟⠋⠀⠀⠀⠀
-⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣷⣷⣿⡁⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢸⣿⣿⣧⣿⣿⣆⠙⢆⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣤⣿⣿⣿⡟⠹⣿⣿⣿⣿⣷⡀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀...⢸⣿⣿⣿⣿⣿⣧⣴⣿⣿⣿⣿⠏⢧⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠈⢳⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀...⢠⡏⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⢳
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⢠⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⢸⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⢸⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠛⠻⠿⣿⣿⣿⡿⠿⠿⠿⠿⠿⢿⣿⣿⠀⠀⠀</pre>
+            <svg class="death-scythe scythe-right" viewBox="-15 0 130 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,25 C40,25 35,35 35,45 C35,60 25,85 25,90 L45,90 C45,80 50,70 55,65 C58,60 55,45 53,40 C52,38 52,25 50,25 Z"/>
+                <path d="M38,20 C50,12 75,10 98,18 C75,22 55,30 42,32 C38,28 36,24 38,20 Z"/>
+                <path d="M41,22 L28,95 L31,95 L44,22 Z"/>
+                <path d="M43,42 Q40,45 37,43 T42,48" stroke="#ffffff" stroke-width="2" fill="none"/>
+            </svg>
         </div>
 
         <div class="footer-text">NUMBER1SELLERCHATGPT</div>
